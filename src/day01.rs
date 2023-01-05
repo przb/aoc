@@ -1,10 +1,9 @@
 pub mod day01 {
     use std::cmp::Reverse;
     use std::fs;
-    use std::collections::{binary_heap, BinaryHeap};
+    use std::collections::BinaryHeap;
 
     pub fn get_max_elf() {
-
         let t1 = std::time::SystemTime::now();
 
         let num_max = 3;
@@ -31,7 +30,7 @@ pub mod day01 {
         }
 
         let mut part_two_sum = 0;
-        for value in heap.iter(){
+        for value in heap.iter() {
             part_two_sum += value.0;
         }
 
