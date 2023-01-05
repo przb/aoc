@@ -20,6 +20,8 @@ pub mod day02 {
 
 
     pub fn rock_paper_scissors() {
+        let t1 = std::time::SystemTime::now();
+
         let mut scores_part1 = HashMap::new();
         scores_part1.insert(String::from("A X"), TIE_POINTS+ROCK_POINTS);
         scores_part1.insert(String::from("B X"), LOSS_POINTS+ROCK_POINTS);
@@ -54,8 +56,12 @@ pub mod day02 {
             total_part1 += scores_part1.get(line).unwrap_or(&0);
             total_part2 += scores_part2.get(line).unwrap_or(&0);
         }
+        let t2 = std::time::SystemTime::now();
+        let ms_compute = t2.duration_since(t1).unwrap().as_micros();
 
         println!("Day 2 part 1 solution: total points = {total_part1}");
         println!("Day 2 part 2 solution: total points = {total_part2}");
+        println!("Took {ms_compute}μs");
+
     }
 }
