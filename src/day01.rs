@@ -5,6 +5,8 @@ pub mod day01 {
 
     pub fn get_max_elf() {
 
+        let t1 = std::time::SystemTime::now();
+
         let num_max = 3;
         let mut heap = BinaryHeap::new();
         let input = fs::read_to_string("inputs/input01.txt").unwrap();
@@ -33,7 +35,11 @@ pub mod day01 {
             part_two_sum += value.0;
         }
 
+        let t2 = std::time::SystemTime::now();
+
+        let ms_compute = t2.duration_since(t1).unwrap().as_micros();
         println!("Day 1 part 1 solution: Max = {max}");
         println!("Day 1 part 2 solution: Max = {part_two_sum}");
+        println!("Took {ms_compute}μs");
     }
 }
