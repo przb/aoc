@@ -1,6 +1,5 @@
 mod day01;
 
 fn main() {
-    println!("Hello, world!");
-    day01::day01::getElf();
+    day01::day01::get_max_elf();
 }
