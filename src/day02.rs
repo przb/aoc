@@ -2,9 +2,9 @@ pub mod day02 {
     use std::collections::HashMap;
     use std::fs;
 
-    const MY_ROCK: char = 'X';      // lose for pt2
-    const MY_PAPER: char = 'Y';     // win for pt2
-    const MY_SCISSOR: char = 'Z';   // draw for pt2
+    // const MY_ROCK: char = 'X';      // lose for pt2
+    // const MY_PAPER: char = 'Y';     // win for pt2
+    // const MY_SCISSOR: char = 'Z';   // draw for pt2
 
     const ROCK_POINTS: i32 = 1;
     const PAPER_POINTS: i32 = 2;
@@ -14,9 +14,9 @@ pub mod day02 {
     const TIE_POINTS: i32 = 3;
     const LOSS_POINTS: i32 = 0;
 
-    const OPPONENT_ROCK: char = 'A';
-    const OPPONENT_PAPER: char = 'B';
-    const OPPONENT_SCISSORS: char = 'C';
+    // const OPPONENT_ROCK: char = 'A';
+    // const OPPONENT_PAPER: char = 'B';
+    // const OPPONENT_SCISSORS: char = 'C';
 
 
     pub fn rock_paper_scissors() {
