@@ -17,11 +17,23 @@ pub mod day03 {
         let input = fs::read_to_string("inputs/input03.txt").unwrap();
 
         let mut total_priority = 0;
+        let mut badge_priority = 0;
+        let mut overlap = String::new();
         'line_loop:
-        for line in input.split("\n") {
+        for (i, line) in input.lines().enumerate() {
+            if i % 3 == 0 {
+                if i > 0 { badge_priority += priority!(overlap.chars().nth(0).unwrap()); }
+                overlap = String::from(line);
+            };
+            overlap.retain(|c| line.contains(c));
+
+
             let first_half = &line[..line.len() / 2];
             let second_half = &line[line.len() / 2..];
 
+            if i == 299 {
+                badge_priority += priority!(overlap.chars().nth(0).unwrap());
+            }
 
             for letter in first_half.chars() {
                 if second_half.contains(letter) {
@@ -40,5 +52,6 @@ pub mod day03 {
             }
         }
         println!("Day 3 part 1 solution: total priority = {total_priority}");
+        println!("Day 3 part 2 solution: total priority = {badge_priority}");
     }
 }
