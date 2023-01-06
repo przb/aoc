@@ -7,7 +7,7 @@ pub mod day03 {
                 $ a as i32 - 'A' as i32 + 26 + 1
             } else {
                 $ a as i32 - 'a' as i32 + 1
-            };
+            }
         }
     }
 
